@@ -26,7 +26,7 @@ jobs:
 
       - name: Identify upstream tag
         run: |
-          BASECOMMIT=$(git merge-base origin/main HEAD)
+          BASECOMMIT=$(git merge-base origin/ipxe HEAD)
           SHIMTAG=$(git describe ${BASECOMMIT})
           if [ ! $(git tag -l "${SHIMTAG}") ] ; then
               echo "Not branched from an upstream tag"
